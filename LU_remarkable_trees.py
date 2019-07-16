@@ -32,7 +32,7 @@ def filterTags(attrs):
         if len(split_name) == 1 or len(split_name) == 2 and split_name[1] == "sp.":
             tags["genus"] = split_name[0]
         elif len(split_name) == 2 and split_name[1] and not split_name[1].endswith("."):
-            tags["species"] = split_name[1]
+            tags["species"] = split_name[0] + " " + split_name[1]
         elif len(split_name) > 2:
             tags["species"] = split_name[0] + " " + split_name[1]
             tags["debug:import_tree"] = "Long name, check!"
