@@ -15,7 +15,9 @@ def filterTags(attrs):
     
     tags = {}
     
-    tags["denotation"] = "natural_monument" 
+    tags["denotation"] = "natural_monument"
+    tags["heritage"] = "2"
+    tags["heritage:operator"] = "anf"
     tags["debug:arbre_baum"] = attrs.get("arbre_baum")
     tags["debug:type"] = attrs.get("type")
 
@@ -29,7 +31,7 @@ def filterTags(attrs):
         tags["taxon"] = attrs.get("arbre_baum")
         split_name = attrs.get("arbre_baum").split(" ")
 
-        if len(split_name) == 1 or len(split_name) == 2 and split_name[1] == "sp.":
+        if len(split_name) == 1 or len(split_name) == 2 and split_name[1].endswith("."):
             tags["genus"] = split_name[0]
         elif len(split_name) == 2 and split_name[1] and not split_name[1].endswith("."):
             tags["species"] = split_name[0] + " " + split_name[1]
