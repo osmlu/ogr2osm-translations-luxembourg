@@ -23,7 +23,7 @@ def filterTags(attrs):
         tags["construction"] = "generator"
         tags["fixme"] = "survey whether construction has begun"
     else:
-        print("ERROR: Unhandlded state: %s detected" % attrs.get("ETAT"))
+        print("ERROR: Unhandled state: %s detected" % attrs.get("ETAT"))
 
     tags["generator:method"] = "wind_turbine"
     tags["generator:type"] = "horizontal_axis"
